@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1D1D1D;
+    font-family: "Open-Sans", sans-serif;
+}
+
+.wrapper_container {
+    display: flex;
+    height: 1500px;
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+// *** SIDEBAR STYLE ***
+
+.sidebar_container {
+    display: flex;
+    position: absolute;
+    height: 1000px;
+    width: 56px;
+    background: rgba(29, 29, 29, 0.5);
+    box-shadow: 0px 40px 40px 8px rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(24px);
+    z-index: 1;
+
+    .sidebar_inner {
+        height: auto;
+        width: 100%;
+
+        .sidebar_logo {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            top: 56px;
+        }
+
+        .sidebar_navigation {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 0px;
+            top: 115px;
+            gap: 80px;
+        }
+    }
+
+
+}
+
+// *** HEADER STYLE ***
+
+.header_container {
+    display: flex;
+    position: relative;
+    height: 648px;
+    width: 1700px;
+
+    .header_inner {
+        height: auto;
+        width: 100%;
+
+        .header_user_btns {
+            position: absolute;
+            display: flex;
+            gap: 40px;
+            right: 58px;
+            top: 24px;
+        }
+
+        .header_scroll {
+            background: linear-gradient(269.96deg, rgba(29, 29, 29, 0) 0.04%, rgba(29, 29, 29, 0.8) 99.5%);
+            align-items: flex-start;
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            height: auto;
+            width: 100%;
+
+            img {
+                z-index: -1;
+            }
+
+            .header_pagination {
+                background: linear-gradient(90deg, rgb(29 29 29 / 0%) 0.04%, rgb(29 29 29) 99.5%);
+                position: absolute;
+                right: 0;
+                display: inline-block;
+                width: 70px;
+                height: 648px;
+            }
+
+            .header_pagination a {
+                position: absolute;
+                top: calc(50% - 40px/2);
+                color: rgb(255, 255, 255);
+                float: left;
+                padding: 8px 16px;
+                text-decoration: none;
+                transition: color .3s;
+            }
+
+            .header_pagination a:hover:not(.active) {
+                color: #1D1D1D;
+            }
+        }
+
+
+    }
+}
