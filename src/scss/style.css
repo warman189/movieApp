@@ -2,18 +2,63 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: 0.3s all;
 }
 
 body {
   background: #1D1D1D;
   font-family: "Open-Sans", sans-serif;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #dddddd;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #db1d5c;
+  border-radius: 50px;
 }
 
 .wrapper_container {
-  display: flex;
-  height: 1500px;
+  display: block;
+  height: auto;
   max-width: 1700px;
   margin: 0 auto;
+}
+.wrapper_container .new_rel_title {
+  position: absolute;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+  margin: 0 0 0 100px;
+  top: 672px;
+}
+.wrapper_container .new_rel_title:hover {
+  opacity: 25%;
+}
+.wrapper_container .featured_tvshows_title {
+  position: absolute;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+  margin: 0 0 0 100px;
+  top: 1185px;
+}
+.wrapper_container .featured_tvshows_title:hover {
+  opacity: 25%;
 }
 
 .sidebar_container {
@@ -57,12 +102,103 @@ body {
   height: auto;
   width: 100%;
 }
+.header_container .header_inner .header_description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 14px;
+  position: absolute;
+  width: 632px;
+  height: 320px;
+  left: 236px;
+  top: 164px;
+  z-index: 1;
+}
+.header_container .header_inner .header_description .btnWatch {
+  cursor: pointer;
+  background: none;
+  padding: 16px;
+  width: 200px;
+  height: 56px;
+  box-shadow: 0px 16px 16px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 40px;
+  border: 1px solid;
+  border-color: #FF00F5 rgba(15, 239, 253, 0.2196078431) #0FEFFD;
+  order: 4;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #FFFFFF;
+  text-shadow: 0px 40px 40px rgba(0, 0, 0, 0.12);
+}
+.header_container .header_inner .header_description .btnWatch:hover {
+  background: rgba(44, 44, 44, 0.3);
+  border-color: #0FEFFD #FF00F5 rgba(15, 239, 253, 0.2196078431);
+}
+.header_container .header_inner .header_description .btnWatch:active {
+  opacity: 25%;
+}
+.header_container .header_inner .header_description .header_description_lead {
+  order: 3;
+}
+.header_container .header_inner .header_description .header_description_lead p {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  color: #FFFFFF;
+}
+.header_container .header_inner .header_description .header_description_title {
+  height: 64px;
+  width: 100%;
+  order: 2;
+}
+.header_container .header_inner .header_description .header_description_title h1 {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 64px;
+  color: #FFFFFF;
+}
+.header_container .header_inner .header_description .description_tag {
+  cursor: pointer;
+  padding: 4px 8px;
+  background: rgba(29, 29, 29, 0.5);
+  border-radius: 0px 8px;
+  order: 0;
+}
+.header_container .header_inner .header_description .description_tag p {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #0FEFFD;
+}
+.header_container .header_inner .header_description .description_tag p:hover {
+  opacity: 55%;
+  text-decoration: underline;
+}
+.header_container .header_inner .header_description .description_tag p:active {
+  color: rgba(7, 115, 122, 0.4745098039);
+}
+.header_container .header_inner .header_description .description_rating {
+  display: flex;
+  order: 1;
+}
 .header_container .header_inner .header_user_btns {
   position: absolute;
   display: flex;
   gap: 40px;
   right: 58px;
   top: 24px;
+  z-index: 1;
 }
 .header_container .header_inner .header_scroll {
   background: linear-gradient(269.96deg, rgba(29, 29, 29, 0) 0.04%, rgba(29, 29, 29, 0.8) 99.5%);
@@ -92,8 +228,149 @@ body {
   float: left;
   padding: 8px 16px;
   text-decoration: none;
-  transition: color 0.3s;
 }
-.header_container .header_inner .header_scroll .header_pagination a:hover:not(.active) {
-  color: #1D1D1D;
+.header_container .header_inner .header_scroll .header_pagination a:hover {
+  color: rgba(255, 255, 255, 0.486);
+}
+.header_container .header_inner .header_scroll .header_pagination a:active {
+  background: rgba(255, 255, 255, 0.329);
+  border-radius: 100px;
+}
+.header_container .header_inner .header_scroll .pagination_radio {
+  display: flex;
+  position: absolute;
+  width: 56px;
+  height: 8px;
+  left: 822px;
+  top: 616px;
+  gap: 16px;
+}
+
+.main {
+  position: relative;
+  top: 72px;
+}
+
+.main_container {
+  display: flex;
+  position: relative;
+  height: 440px;
+  width: 1700px;
+}
+.main_container .main_inner {
+  position: absolute;
+  height: auto;
+  width: 100%;
+}
+.main_container .main_inner .main_movie_card {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background: linear-gradient(180deg, rgba(29, 29, 29, 0) 0%, rgba(29, 29, 29, 0.8) 80.79%);
+  position: relative;
+  width: 292px;
+  height: 440px;
+  left: 40px;
+  margin: 0 0 0 16px;
+}
+.main_container .main_inner .main_movie_card .movie_cover_logo {
+  position: absolute;
+  z-index: -1;
+}
+.main_container .main_inner .main_movie_card .movie_card_description {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 10px;
+  position: absolute;
+  width: 292px;
+  height: 150px;
+  padding-left: 24px;
+  top: 290px;
+  z-index: 1;
+}
+.main_container .main_inner .main_movie_card .movie_card_description .movie_description_tag {
+  cursor: pointer;
+  padding: 4px 8px;
+  background: rgba(29, 29, 29, 0.5);
+  border-radius: 0px 8px;
+  order: 0;
+}
+.main_container .main_inner .main_movie_card .movie_card_description .movie_description_tag p {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #0FEFFD;
+}
+.main_container .main_inner .main_movie_card .movie_card_description .movie_description_tag p:hover {
+  opacity: 55%;
+  text-decoration: underline;
+}
+.main_container .main_inner .main_movie_card .movie_card_description .movie_description_tag p:active {
+  color: rgba(7, 115, 122, 0.4745098039);
+}
+.main_container .main_inner .main_movie_card .movie_card_description .movie_description_rating {
+  display: flex;
+  order: 1;
+}
+.main_container .main_inner .main_movie_card .movie_card_description .movie_description_title {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: #FFFFFF;
+  order: 2;
+}
+.main_container .main_inner .main_movie_card .movie_card_description:hover {
+  height: 205px;
+  top: 235px;
+}
+.main_container .main_inner .main_movie_card .movie_card_description .btn_movie_watch {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+  order: 3;
+  text-decoration: none;
+}
+.main_container .main_inner .main_movie_card .movie_card_description .btn_movie_watch:hover {
+  text-decoration: underline;
+}
+.main_container .main_inner .main_movie_card .movie_card_description .btn_movie_watch:active {
+  opacity: 50%;
+}
+
+.footer_container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: relative;
+  width: 1700px;
+  height: 736px;
+  left: 0px;
+  top: 135px;
+}
+.footer_container .footer_inner {
+  position: absolute;
+  height: auto;
+  width: 100%;
+}
+.footer_container .footer_inner .foo_tv_card {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 504px;
+  height: 736px;
+  left: 40px;
+  position: relative;
+  margin: 0 0 0 16px;
 }/*# sourceMappingURL=style.css.map */

@@ -2,18 +2,67 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: .3s all;
 }
 
 body {
     background: #1D1D1D;
     font-family: "Open-Sans", sans-serif;
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #dddddd;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #db1d5c;
+    border-radius: 50px;
 }
 
 .wrapper_container {
-    display: flex;
-    height: 1500px;
+    display: block;
+    height: auto;
     max-width: 1700px;
     margin: 0 auto;
+
+    .new_rel_title {
+        position: absolute;
+        cursor: pointer;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        color: #FFFFFF;
+        margin: 0 0 0 100px;
+        top: 672px;
+
+        &:hover {
+            opacity: 25%;
+        }
+    }
+
+    .featured_tvshows_title {
+        position: absolute;
+        cursor: pointer;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        color: #FFFFFF;
+        margin: 0 0 0 100px;
+        top: 1185px;
+
+        &:hover {
+            opacity: 25%;
+        }
+    }
 }
 
 // *** SIDEBAR STYLE ***
@@ -66,12 +115,116 @@ body {
         height: auto;
         width: 100%;
 
+        .header_description {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 14px;
+            position: absolute;
+            width: 632px;
+            height: 320px;
+            left: 236px;
+            top: 164px;
+            z-index: 1;
+
+            .btnWatch {
+                cursor: pointer;
+                background: none;
+                padding: 16px;
+                width: 200px;
+                height: 56px;
+                box-shadow: 0px 16px 16px 4px rgba(0, 0, 0, 0.12);
+                border-radius: 40px;
+                border: 1px solid;
+                border-color: #FF00F5 #0FEFFD38 #0FEFFD;
+                order: 4;
+                font-family: 'Roboto', sans-serif;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 24px;
+                text-align: center;
+                color: #FFFFFF;
+                text-shadow: 0px 40px 40px rgba(0, 0, 0, 0.12);
+
+                &:hover {
+                    background: rgba(44, 44, 44, 0.3);
+                    border-color: #0FEFFD #FF00F5 #0FEFFD38;
+                }
+
+                &:active {
+                    opacity: 25%;
+                }
+            }
+
+            .header_description_lead {
+                order: 3;
+
+                p {
+                    font-family: 'Roboto', sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 32px;
+                    color: #FFFFFF;
+                }
+            }
+
+            .header_description_title {
+                height: 64px;
+                width: 100%;
+                order: 2;
+
+                h1 {
+                    font-family: 'Roboto', sans-serif;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 56px;
+                    line-height: 64px;
+                    color: #FFFFFF;
+                }
+            }
+
+            .description_tag {
+                cursor: pointer;
+                padding: 4px 8px;
+                background: rgba(29, 29, 29, 0.5);
+                border-radius: 0px 8px;
+                order: 0;
+
+                p {
+                    font-family: 'Roboto', sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: #0FEFFD;
+
+                    &:hover {
+                        opacity: 55%;
+                        text-decoration: underline;
+                    }
+
+                    &:active {
+                        color: #07737a79;
+                    }
+                }
+            }
+
+            .description_rating {
+                display: flex;
+                order: 1;
+            }
+        }
+
         .header_user_btns {
             position: absolute;
             display: flex;
             gap: 40px;
             right: 58px;
             top: 24px;
+            z-index: 1;
         }
 
         .header_scroll {
@@ -104,14 +257,180 @@ body {
                 float: left;
                 padding: 8px 16px;
                 text-decoration: none;
-                transition: color .3s;
+
+                &:hover {
+                    color: rgba(255, 255, 255, 0.486);
+                }
+
+                &:active {
+                    background: rgba(255, 255, 255, 0.329);
+                    border-radius: 100px;
+                }
             }
 
-            .header_pagination a:hover:not(.active) {
-                color: #1D1D1D;
+            .pagination_radio {
+                display: flex;
+                position: absolute;
+                width: 56px;
+                height: 8px;
+                left: 822px;
+                top: 616px;
+                gap: 16px;
+
             }
         }
 
 
+    }
+}
+
+// *** CARD FRAMES *** 
+
+.main {
+    position: relative;
+    top: 72px;
+}
+
+.main_container {
+    display: flex;
+    position: relative;
+    height: 440px;
+    width: 1700px;
+
+    .main_inner {
+        position: absolute;
+        height: auto;
+        width: 100%;
+
+        .main_movie_card {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            background: linear-gradient(180deg, rgba(29, 29, 29, 0) 0%, rgba(29, 29, 29, 0.8) 80.79%);
+            position: relative;
+            width: 292px;
+            height: 440px;
+            left: 40px;
+            margin: 0 0 0 16px;
+
+            .movie_cover_logo {
+                position: absolute;
+                z-index: -1;
+            }
+
+            .movie_card_description {
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 24px;
+                gap: 10px;
+                position: absolute;
+                width: 292px;
+                height: 150px;
+                padding-left: 24px;
+                top: 290px;
+                z-index: 1;
+
+
+                .movie_description_tag {
+                    cursor: pointer;
+                    padding: 4px 8px;
+                    background: rgba(29, 29, 29, 0.5);
+                    border-radius: 0px 8px;
+                    order: 0;
+
+                    p {
+                        font-family: 'Roboto', sans-serif;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 16px;
+                        color: #0FEFFD;
+
+                        &:hover {
+                            opacity: 55%;
+                            text-decoration: underline;
+                        }
+
+                        &:active {
+                            color: #07737a79;
+                        }
+                    }
+                }
+
+                .movie_description_rating {
+                    display: flex;
+                    order: 1;
+                }
+
+                .movie_description_title {
+                    font-family: 'Roboto', sans-serif;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 32px;
+                    color: #FFFFFF;
+                    order: 2;
+                }
+
+                &:hover {
+                    height: 205px;
+                    top: 235px;
+                }
+
+                .btn_movie_watch {
+                    font-family: 'Roboto', sans-serif;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 24px;
+                    color: #FFFFFF;
+                    order: 3;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+
+                    &:active {
+                        opacity: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// *** FOOTER STYLE *** 
+
+.footer_container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: relative;
+    width: 1700px;
+    height: 736px;
+    left: 0px;
+    top: 135px;
+
+    .footer_inner {
+        position: absolute;
+        height: auto;
+        width: 100%;
+
+        .foo_tv_card {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            width: 504px;
+            height: 736px;
+            left: 40px;
+            position: relative;
+            margin: 0 0 0 16px;
+        }
     }
 }
