@@ -11,6 +11,11 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="shortcut icon"
+      href="/src/icons/App frame/play__1.png"
+      type="image/x-icon"
+    />
     <title>Movie App</title>
   </head>
   <body>
@@ -89,8 +94,8 @@
                   alt=""
                 />
                 <div class="header_pagination">
-                  <a href="#" style="display: none">❮</a>
-                  <a href="#">❯</a>
+                  <p href="#" style="display: none">❮</p>
+                  <p href="#" class="head_scroll_next">❯</p>
                 </div>
                 <div class="pagination_radio"></div>
               </div>
@@ -101,44 +106,18 @@
         <div class="main">
           <div class="main_container">
             <div class="main_inner">
-              <div class="main_movie_card">
-                <div class="movie_card_description">
-                  <div class="movie_description_tag">
-                    <p>Fantasy</p>
-                  </div>
-                  <div class="movie_description_rating">
-                    <img src="/src/icons/Star Fill.png" alt="star_fill" />
-                    <img src="/src/icons/Star Fill.png" alt="star_fill" />
-                    <img src="/src/icons/Star Fill.png" alt="star_fill" />
-                    <img src="/src/icons/Star Fill.png" alt="star_fill" />
-                  </div>
-                  <h1 class="movie_description_title">Wonder Woman 1984</h1>
-                  <a href="#" class="btn_movie_watch" style="display: none"
-                    >Watch now ❯</a
-                  >
-                </div>
-                <img
-                  src="/src/icons/cardMovies/card-img.png"
-                  alt=""
-                  class="movie_cover_logo"
-                />
+              <div class="main_next">
+                <p href="#" class="main_scroll_next">❯</p>
               </div>
-              <div class="main_scroll"></div>
+              <div class="main_previous">
+                <p href="#" style="display: none" class="main_scroll_previous">
+                  ❮
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <p class="featured_tvshows_title">Featured TV shows ❯</p>
-        <div class="footer">
-          <div class="footer_container">
-            <div class="footer_inner">
-              <div class="foo_tv_card">
-                <div class="tv_card_description"></div>
-                <img src="/src/icons/tvShowsCards/img.png" class="card_tv_shows_cover">
-              </div>
-              <div class="footer_scroll"></div>
-            </div>
-          </div>
-        </div>
+        <p class="featured_tvshows_title">Coming soon... ❯</p>
       </div>
     </div>
     <script src="/src/js/app.js"></script>

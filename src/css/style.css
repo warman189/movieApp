@@ -12,11 +12,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #dddddd;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -47,7 +43,6 @@ body {
 }
 .wrapper_container .featured_tvshows_title {
   position: absolute;
-  cursor: pointer;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -57,14 +52,11 @@ body {
   margin: 0 0 0 100px;
   top: 1185px;
 }
-.wrapper_container .featured_tvshows_title:hover {
-  opacity: 25%;
-}
 
 .sidebar_container {
   display: flex;
   position: absolute;
-  height: 1000px;
+  height: 1160px;
   width: 56px;
   background: rgba(29, 29, 29, 0.5);
   box-shadow: 0px 40px 40px 8px rgba(0, 0, 0, 0.16);
@@ -76,6 +68,7 @@ body {
   width: 100%;
 }
 .sidebar_container .sidebar_inner .sidebar_logo {
+  cursor: pointer;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -90,6 +83,9 @@ body {
   padding: 0px;
   top: 115px;
   gap: 80px;
+}
+.sidebar_container .sidebar_inner .sidebar_navigation img {
+  cursor: pointer;
 }
 
 .header_container {
@@ -200,6 +196,9 @@ body {
   top: 24px;
   z-index: 1;
 }
+.header_container .header_inner .header_user_btns img {
+  cursor: pointer;
+}
 .header_container .header_inner .header_scroll {
   background: linear-gradient(269.96deg, rgba(29, 29, 29, 0) 0.04%, rgba(29, 29, 29, 0.8) 99.5%);
   align-items: flex-start;
@@ -217,11 +216,10 @@ body {
   background: linear-gradient(90deg, rgba(29, 29, 29, 0) 0.04%, rgb(29, 29, 29) 99.5%);
   position: absolute;
   right: 0;
-  display: inline-block;
-  width: 70px;
+  width: 45px;
   height: 648px;
 }
-.header_container .header_inner .header_scroll .header_pagination a {
+.header_container .header_inner .header_scroll .header_pagination p {
   position: absolute;
   top: calc(50% - 20px);
   color: rgb(255, 255, 255);
@@ -229,10 +227,10 @@ body {
   padding: 8px 16px;
   text-decoration: none;
 }
-.header_container .header_inner .header_scroll .header_pagination a:hover {
+.header_container .header_inner .header_scroll .header_pagination p:hover {
   color: rgba(255, 255, 255, 0.486);
 }
-.header_container .header_inner .header_scroll .header_pagination a:active {
+.header_container .header_inner .header_scroll .header_pagination p:active {
   background: rgba(255, 255, 255, 0.329);
   border-radius: 100px;
 }
@@ -252,19 +250,62 @@ body {
 }
 
 .main_container {
-  display: flex;
-  position: relative;
   height: 440px;
   width: 1700px;
+  overflow: hidden;
 }
 .main_container .main_inner {
+  display: inline-flex;
+}
+.main_container .main_inner .main_next {
+  background: linear-gradient(90deg, rgba(29, 29, 29, 0) 0.04%, rgb(29, 29, 29) 99.5%);
   position: absolute;
-  height: auto;
-  width: 100%;
+  right: 0;
+  display: inline-block;
+  width: 45px;
+  height: 440px;
+}
+.main_container .main_inner .main_next p {
+  z-index: 1;
+  position: absolute;
+  top: calc(50% - 20px);
+  color: rgb(255, 255, 255);
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.main_container .main_inner .main_next p:hover {
+  color: rgba(255, 255, 255, 0.486);
+}
+.main_container .main_inner .main_next p:active {
+  background: rgba(255, 255, 255, 0.329);
+  border-radius: 100px;
+}
+.main_container .main_inner .main_previous {
+  position: absolute;
+  left: 56px;
+  display: inline-block;
+  width: 45px;
+  height: 440px;
+}
+.main_container .main_inner .main_previous p {
+  z-index: 1;
+  position: absolute;
+  top: calc(50% - 20px);
+  color: rgb(255, 255, 255);
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.main_container .main_inner .main_previous p:hover {
+  color: rgba(255, 255, 255, 0.486);
+}
+.main_container .main_inner .main_previous p:active {
+  background: rgba(255, 255, 255, 0.329);
+  border-radius: 100px;
 }
 .main_container .main_inner .main_movie_card {
-  display: inline-flex;
-  flex-direction: column;
+  display: flex;
   justify-content: flex-end;
   align-items: flex-start;
   background: linear-gradient(180deg, rgba(29, 29, 29, 0) 0%, rgba(29, 29, 29, 0.8) 80.79%);
@@ -275,6 +316,8 @@ body {
   margin: 0 0 0 16px;
 }
 .main_container .main_inner .main_movie_card .movie_cover_logo {
+  width: 100%;
+  height: 100%;
   position: absolute;
   z-index: -1;
 }
@@ -284,13 +327,11 @@ body {
   flex-direction: column;
   align-items: flex-start;
   padding: 24px;
-  gap: 10px;
+  left: 0;
+  bottom: 0;
+  gap: 5px;
   position: absolute;
-  width: 292px;
-  height: 150px;
   padding-left: 24px;
-  top: 290px;
-  z-index: 1;
 }
 .main_container .main_inner .main_movie_card .movie_card_description .movie_description_tag {
   cursor: pointer;
@@ -317,6 +358,16 @@ body {
 .main_container .main_inner .main_movie_card .movie_card_description .movie_description_rating {
   display: flex;
   order: 1;
+  border: 1px solid;
+  border-color: rgba(15, 239, 253, 0.2196078431) #0FEFFD;
+  border-radius: 8px;
+  width: 30px;
+  height: 20px;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
 }
 .main_container .main_inner .main_movie_card .movie_card_description .movie_description_title {
   font-family: "Roboto", sans-serif;
@@ -327,11 +378,16 @@ body {
   color: #FFFFFF;
   order: 2;
 }
+.main_container .main_inner .main_movie_card .movie_card_description:hover .btn_movie_watch {
+  display: block;
+}
 .main_container .main_inner .main_movie_card .movie_card_description:hover {
-  height: 205px;
-  top: 235px;
+  width: 100%;
+  height: auto;
+  bottom: 20px;
 }
 .main_container .main_inner .main_movie_card .movie_card_description .btn_movie_watch {
+  display: none;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -346,31 +402,4 @@ body {
 }
 .main_container .main_inner .main_movie_card .movie_card_description .btn_movie_watch:active {
   opacity: 50%;
-}
-
-.footer_container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  position: relative;
-  width: 1700px;
-  height: 736px;
-  left: 0px;
-  top: 135px;
-}
-.footer_container .footer_inner {
-  position: absolute;
-  height: auto;
-  width: 100%;
-}
-.footer_container .footer_inner .foo_tv_card {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  width: 504px;
-  height: 736px;
-  left: 40px;
-  position: relative;
-  margin: 0 0 0 16px;
 }/*# sourceMappingURL=style.css.map */

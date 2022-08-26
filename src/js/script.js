@@ -1,13 +1,34 @@
-const movieDescription = document.querySelectorAll(".movie_card_description");
-const btnMovieWatch = document.querySelectorAll(".btn_movie_watch");
+// *** Scroll for Header container ***
 
-for (let i = 0; i < movieDescription.length; i++) {
-  for (let j = 0; j < btnMovieWatch.length; j++) {
-    movieDescription[i].addEventListener("mouseover", (_) => {
-      btnMovieWatch[j].style.display = "";
-    });
-    movieDescription[i].addEventListener("mouseout", (_) => {
-      btnMovieWatch[j].style.display = "none";
-    });
-  }
-}
+let headContainer = document.querySelector(".header_scroll");
+let nextHeadBtn = document.querySelector(".head_scroll_next");
+
+nextHeadBtn.onclick = function leftScroll() {
+  prevBtn.style.display = "";
+  headContainer.scrollBy({
+    left: 1700,
+    behavior: "smooth",
+  });
+};
+// ***
+
+// *** Scroll Function for main container ***
+let mainContent = document.querySelector(".main_container");
+let nextBtn = document.querySelector(".main_scroll_next");
+let prevBtn = document.querySelector(".main_scroll_previous");
+
+nextBtn.onclick = function leftScroll() {
+  prevBtn.style.display = "";
+  mainContent.scrollBy({
+    left: 350,
+    behavior: "smooth",
+  });
+};
+
+prevBtn.onclick = function rightScroll() {
+  mainContent.scrollBy({
+    left: -350,
+    behavior: "smooth",
+  });
+};
+// *** ***
